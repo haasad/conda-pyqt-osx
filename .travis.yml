@@ -33,10 +33,14 @@ install:
   - conda install --use-local sip
   - conda install --use-local pyqt
 
+script:
+  - echo "ready for upload"
+
 after_success:
   - conda install anaconda-client;
-  - cp /home/travis/miniconda/conda-bld/osx/*.tar.bz2 .;
-  - anaconda -t $CONDA_TOKEN upload --force *.tar.bz2;
+  - cp /home/travis/miniconda/conda-bld/osx/*.tar.bz2 .
+  - anaconda -t $CONDA_TOKEN upload --force sip*.tar.bz2
+  - anaconda -t $CONDA_TOKEN upload --force pyqt*.tar.bz2
         
 
 notifications:
