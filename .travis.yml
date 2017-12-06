@@ -38,7 +38,7 @@ script:
 
 after_success:
   - conda install anaconda-client;
-  - cp /home/travis/miniconda/conda-bld/osx/*.tar.bz2 .
+  - cp /home/travis/miniconda/conda-bld/osx-64/*.tar.bz2 .
   - anaconda -t $CONDA_TOKEN upload --force sip*.tar.bz2
   - anaconda -t $CONDA_TOKEN upload --force pyqt*.tar.bz2
         
